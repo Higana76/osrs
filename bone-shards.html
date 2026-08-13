@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Bone Shard Calculator</title>
+  </head>
+  <body>
+    <main>
+      <section class="floating-top">
+        <article class="header">
+          <h1>OSRS Bone Shard Calculator</h1>
+          <button id="reset-button" class="reset-button">Reset All</button>
+        </article>
+        <article class="parent-container evenly-spaced">
+          <form
+            action=""
+            class="boneQuantityForm info-box"
+            onsubmit="event.preventDefault()"
+          >
+            <label for="bonesQuantity">Current quantity of bone shards:</label>
+            <input type="number" class="base-shards" value="0" />
+          </form>
+          <div class="raw-bones-total-container">
+            <p class="info-box">
+              Bone shards from raw bones:
+              <span id="rawBonesTotalResult">0</span>
+            </p>
+          </div>
+          <p class="info-box">
+            Total bone shards: <span id="grandTotalBoneShards">0</span>
+          </p>
+          <p class="info-box">Total wines needed: <span id="wines">0</span></p>
+        </article>
+        <article class="parent-container evenly-spaced">
+          <div>
+            <p class="info-box">
+              Blessed Wine Total EXP: <span id="experience">0</span>
+            </p>
+          </div>
+          <div>
+            <p class="info-box">
+              Blessed Sunfire Wine Total EXP:
+              <span id="sunfireExperience">0</span>
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section id="calculator-container">
+        <!-- Bones -->
+        <article class="rawBones">
+          <h3>Bones</h3>
+          <div class="parent-container">
+            <div class="image-container">
+              <img
+                src="images/120px-Bones_detail.webp"
+                alt=""
+                class="boneImages"
+              />
+            </div>
+            <form
+              action=""
+              class="boneQuantityForm"
+              onsubmit="event.preventDefault()"
+            >
+              <label for="bonesQuantity">Quantity:</label>
+              <input
+                type="number"
+                class="quantity-input"
+                value="0"
+                data-multiplier="4"
+                data-result-id="bonesResult"
+              />
+              <p>Shards per bone: 4</p>
+              <p>Bone Shards Total:</p>
+              <p id="bonesResult" class="rawResults">0</p>
+            </form>
+          </div>
+        </article>
+
+        <!-- Bat Bones -->
+        <article class="rawBones">
+          <h3>Bat Bones</h3>
+          <div class="parent-container">
+            <div class="image-container">
+              <img
+                src="images/130px-Bat_bones_detail.webp"
+                alt=""
+                class="boneImages"
+              />
+            </div>
+            <form
+              action=""
+              class="boneQuantityForm"
+              onsubmit="event.preventDefault()"
+            >
+              <label for="batbonesQuantity">Quantity:</label>
+              <input
+                type="number"
+                class="quantity-input"
+                value="0"
+                data-multiplier="5"
+                data-result-id="batbonesResult"
+              />
+              <p>Shards per bone: 5</p>
+              <p>Bone Shards Total:</p>
+              <p id="batbonesResult" class="rawResults">0</p>
+            </form>
+          </div>
+        </article>
+
+        <!-- Big Bones -->
+        <article class="rawBones">
+          <h3>Big Bones</h3>
+          <div class="parent-container">
+            <div class="image-container">
+              <img
+                src="images/150px-Big_bones_detail.webp"
+                alt=""
+                class="boneImages"
+              />
+            </div>
+            <form
+              action=""
+              class="boneQuantityForm"
+              onsubmit="event.preventDefault()"
+            >
+              <label for="bigbonesQuantity">Quantity:</label>
+              <input
+                type="number"
+                class="quantity-input"
+                value="0"
+                data-multiplier="12"
+                data-result-id="bigbonesResult"
+              />
+              <p>Shards per bone: 12</p>
+              <p>Bone Shards:</p>
+              <p id="bigbonesResult" class="rawResults">0</p>
+            </form>
+          </div>
+        </article>
+
+        <!-- Zogre Bones -->
+        <article class="rawBones">
+          <h3>Zogre Bones</h3>
+          <div class="parent-container">
+            <div class="image-container">
+              <img
+                src="images/150px-Zogre_bones_detail.webp"
+                alt=""
+                class="boneImages"
+              />
+            </div>
+            <form
+              action=""
+              class="boneQuantityForm"
+              onsubmit="event.preventDefault()"
+            >
+              <label for="zogrebonesQuantity">Quantity:</label>
+              <input
+                type="number"
+                class="quantity-input"
+                value="0"
+                data-multiplier="18"
+                data-result-id="zogrebonesResult"
+              />
+              <p>Shards per bone: 18</p>
+              <p>Bone Shards:</p>
+              <p id="zogrebonesResult" class="rawResults">0</p>
+            </form>
+          </div>
+        </article>
+
+        <!-- Babywyrm Bones -->
+        <article class="rawBones">
+          <h3>Babywyrm Bones</h3>
+          <div class="parent-container">
+            <div class="image-container">
+              <img
+                src="images/130px-Wyrmling_bones_detail.webp"
+                alt=""
+                class="boneImages"
+              />
+            </div>
+            <form
+              action=""
+              class="boneQuantityForm"
+              onsubmit="event.preventDefault()"
+            >
+              <label for="babywyrmbonesQuantity">Quantity:</label>
+              <input
+                type="number"
+                class="quantity-input"
+                value="0"
+                data-multiplier="21"
+                data-result-id="babywyrmbonesResult"
+              />
+              <p>Shards per bone: 21</p>
+              <p>Bone Shards:</p>
+              <p id="babywyrmbonesResult" class="rawResults">0</p>
+            </form>
+          </div>
+        </article>
+
+        <!-- Baby Dragon Bones -->
+        <article class="rawBones">
+          <h3>Baby Dragon Bones</h3>
+          <div class="parent-container">
+            <div class="image-container">
+              <img
+                src="images/130px-Babydragon_bones_detail.webp"
+                alt=""
+                class="boneImages"
+              />
+            </div>
+            <form
+              action=""
+              class="boneQuantityForm"
+              onsubmit="event.preventDefault()"
+            >
+              <label for="babydragonbonesQuantity">Quantity:</label>
+              <input
+                type="number"
+                class="quantity-input"
+                value="0"
+                data-multiplier="24"
+                data-result-id="babydragonbonesResult"
+              />
+              <p>Shards per bone: 24</p>
+              <p>Bone Shards:</p>
+              <p id="babydragonbonesResult" class="rawResults">0</p>
+            </form>
+          </div>
+        </article>
+
+        <!-- Strykewyrm Bones -->
+        <article class="rawBones">
+          <h3>Strykewyrm Bones</h3>
+          <div class="parent-container">
+            <div class="image-container">
+              <img
+                src="images/140px-Strykewyrm_bones_detail.webp"
+                alt=""
+                class="boneImages"
+              />
+            </div>
+            <form
+              action=""
+              class="boneQuantityForm"
+              onsubmit="event.preventDefault()"
+            >
+              <label for="strykewyrmbonesQuantity">Quantity:</label>
+              <input
+                type="number"
+                class="quantity-input"
+                value="0"
+                data-multiplier="37"
+                data-result-id="strykewyrmbonesResult"
+              />
+              <p>Shards per bone: 37</p>
+              <p>Bone Shards:</p>
+              <p id="strykewyrmbonesResult" class="rawResults">0</p>
+            </form>
+          </div>
+        </article>
+
+        <!-- Wyrm Bones -->
+        <article class="rawBones">
+          <h3>Wyrm Bones</h3>
+          <div class="parent-container">
+            <div class="image-container">
+              <img
+                src="images/140px-Wyrm_bones_detail.webp"
+                alt=""
+                class="boneImages"
+              />
+            </div>
+            <form
+              action=""
+              class="boneQuantityForm"
+              onsubmit="event.preventDefault()"
+            >
+              <label for="wyrmbonesQuantity">Quantity:</label>
+              <input
+                type="number"
+                class="quantity-input"
+                value="0"
+                data-multiplier="8"
+                data-result-id="wyrmbonesResult"
+              />
+              <p>Shards per bone: 4</p>
+              <p>Bone Shards:</p>
+              <p id="wyrmbonesResult" class="rawResults">0</p>
+            </form>
+          </div>
+        </article>
+
+        <!-- Sun-kissed Bones -->
+        <article class="rawBones">
+          <h3>Sun-kissed Bones</h3>
+          <div class="parent-container">
+            <div class="image-container">
+              <img
+                src="images/130px-Sun-kissed_bones_detail.webp"
+                alt=""
+                class="boneImages"
+              />
+            </div>
+            <form
+              action=""
+              class="boneQuantityForm"
+              onsubmit="event.preventDefault()"
+            >
+              <label for="sun-kissedbonesQuantity">Quantity:</label>
+              <input
+                type="number"
+                class="quantity-input"
+                value="0"
+                data-multiplier="45"
+                data-result-id="sun-kissedbonesResult"
+              />
+              <p>Shards per bone: 45</p>
+              <p>Bone Shards:</p>
+              <p id="sun-kissedbonesResult" class="rawResults">0</p>
+            </form>
+          </div>
+        </article>
+
+        <!-- Wyvern Bones -->
+        <article class="rawBones">
+          <h3>Wyvern Bones</h3>
+          <div class="parent-container">
+            <div class="image-container">
+              <img
+                src="images/130px-Wyvern_bones_detail.webp"
+                alt=""
+                class="boneImages"
+              />
+            </div>
+            <form
+              action=""
+              class="boneQuantityForm"
+              onsubmit="event.preventDefault()"
+            >
+              <label for="wyvernbonesQuantity">Quantity:</label>
+              <input
+                type="number"
+                class="quantity-input"
+                value="0"
+                data-multiplier="58"
+                data-result-id="wyvernbonesResult"
+              />
+              <p>Shards per bone: 58</p>
+              <p>Bone Shards:</p>
+              <p id="wyvernbonesResult" class="rawResults">0</p>
+            </form>
+          </div>
+        </article>
+
+        <!-- Dragon Bones -->
+        <article class="rawBones">
+          <h3>Dragon Bones</h3>
+          <div class="parent-container">
+            <div class="image-container">
+              <img
+                src="images/140px-Dragon_bones_detail.webp"
+                alt=""
+                class="boneImages"
+              />
+            </div>
+            <form
+              action=""
+              class="boneQuantityForm"
+              onsubmit="event.preventDefault()"
+            >
+              <label for="dragonbonesQuantity">Quantity:</label>
+              <input
+                type="number"
+                class="quantity-input"
+                value="0"
+                data-multiplier="58"
+                data-result-id="dragonbonesResult"
+              />
+              <p>Shards per bone: 58</p>
+              <p>Bone Shards:</p>
+              <p id="dragonbonesResult" class="rawResults">0</p>
+            </form>
+          </div>
+        </article>
+
+        <!-- Drake Bones -->
+        <article class="rawBones">
+          <h3>Drake Bones</h3>
+          <div class="parent-container">
+            <div class="image-container">
+              <img
+                src="images/150px-Drake_bones_detail.webp"
+                alt=""
+                class="boneImages"
+              />
+            </div>
+            <form
+              action=""
+              class="boneQuantityForm"
+              onsubmit="event.preventDefault()"
+            >
+              <label for="drakebonesQuantity">Quantity:</label>
+              <input
+                type="number"
+                class="quantity-input"
+                value="0"
+                data-multiplier="67"
+                data-result-id="drakebonesResult"
+              />
+              <p>Shards per bone: 67</p>
+              <p>Bone Shards:</p>
+              <p id="drakebonesResult" class="rawResults">0</p>
+            </form>
+          </div>
+        </article>
+
+        <!-- Fayrg Bones -->
+        <article class="rawBones">
+          <h3>Fayrg Bones</h3>
+          <div class="parent-container">
+            <div class="image-container">
+              <img
+                src="images/140px-Fayrg_bones_detail.webp"
+                alt=""
+                class="boneImages"
+              />
+            </div>
+            <form
+              action=""
+              class="boneQuantityForm"
+              onsubmit="event.preventDefault()"
+            >
+              <label for="fayrgbonesQuantity">Quantity:</label>
+              <input
+                type="number"
+                class="quantity-input"
+                value="0"
+                data-multiplier="67"
+                data-result-id="fayrgbonesResult"
+              />
+              <p>Shards per bone: 67</p>
+              <p>Bone Shards:</p>
+              <p id="fayrgbonesResult" class="rawResults">0</p>
+            </form>
+          </div>
+        </article>
+
+        <!-- Lava Dragon Bones -->
+        <article class="rawBones">
+          <h3>Lava Dragon Bones</h3>
+          <div class="parent-container">
+            <div class="image-container">
+              <img
+                src="images/150px-Lava_dragon_bones_detail.webp"
+                alt=""
+                class="boneImages"
+              />
+            </div>
+            <form
+              action=""
+              class="boneQuantityForm"
+              onsubmit="event.preventDefault()"
+            >
+              <label for="lavadragonbonesQuantity">Quantity:</label>
+              <input
+                type="number"
+                class="quantity-input"
+                value="0"
+                data-multiplier="68"
+                data-result-id="lavadragonbonesResult"
+              />
+              <p>Shards per bone: 68</p>
+              <p>Bone Shards:</p>
+              <p id="lavadragonbonesResult" class="rawResults">0</p>
+            </form>
+          </div>
+        </article>
+
+        <!-- Raurg Bones -->
+        <article class="rawBones">
+          <h3>Raurg Bones</h3>
+          <div class="parent-container">
+            <div class="image-container">
+              <img
+                src="images/140px-Raurg_bones_detail.webp"
+                alt=""
+                class="boneImages"
+              />
+            </div>
+            <form
+              action=""
+              class="boneQuantityForm"
+              onsubmit="event.preventDefault()"
+            >
+              <label for="raurgbonesQuantity">Quantity:</label>
+              <input
+                type="number"
+                class="quantity-input"
+                value="0"
+                data-multiplier="77"
+                data-result-id="raurgbonesResult"
+              />
+              <p>Shards per bone: 77</p>
+              <p>Bone Shards:</p>
+              <p id="raurgbonesResult" class="rawResults">0</p>
+            </form>
+          </div>
+        </article>
+
+        <!-- Frost Dragon Bones -->
+        <article class="rawBones">
+          <h3>Frost Dragon Bones</h3>
+          <div class="parent-container">
+            <div class="image-container">
+              <img
+                src="images/130px-Frost_dragon_bones_detail.webp"
+                alt=""
+                class="boneImages"
+              />
+            </div>
+            <form
+              action=""
+              class="boneQuantityForm"
+              onsubmit="event.preventDefault()"
+            >
+              <label for="frostdragonbonesQuantity">Quantity:</label>
+              <input
+                type="number"
+                class="quantity-input"
+                value="0"
+                data-multiplier="84"
+                data-result-id="frostdragonbonesResult"
+              />
+              <p>Shards per bone: 84</p>
+              <p>Bone Shards:</p>
+              <p id="frostdragonbonesResult" class="rawResults">0</p>
+            </form>
+          </div>
+        </article>
+
+        <!-- Hydra Bones -->
+        <article class="rawBones">
+          <h3>Hydra Bones</h3>
+          <div class="parent-container">
+            <div class="image-container">
+              <img
+                src="images/140px-Hydra_bones_detail.webp"
+                alt=""
+                class="boneImages"
+              />
+            </div>
+            <form
+              action=""
+              class="boneQuantityForm"
+              onsubmit="event.preventDefault()"
+            >
+              <label for="hydrabonesQuantity">Quantity:</label>
+              <input
+                type="number"
+                class="quantity-input"
+                value="0"
+                data-multiplier="93"
+                data-result-id="hydrabonesResult"
+              />
+              <p>Shards per bone: 93</p>
+              <p>Bone Shards:</p>
+              <p id="hydrabonesResult" class="rawResults">0</p>
+            </form>
+          </div>
+        </article>
+
+        <!-- Dagannoth Bones -->
+        <article class="rawBones">
+          <h3>Dagannoth Bones</h3>
+          <div class="parent-container">
+            <div class="image-container">
+              <img
+                src="images/150px-Dagannoth_bones_detail.webp"
+                alt=""
+                class="boneImages"
+              />
+            </div>
+            <form
+              action=""
+              class="boneQuantityForm"
+              onsubmit="event.preventDefault()"
+            >
+              <label for="dagannothbonesQuantity">Quantity:</label>
+              <input
+                type="number"
+                class="quantity-input"
+                value="0"
+                data-multiplier="100"
+                data-result-id="dagannothbonesResult"
+              />
+              <p>Shards per bone: 100</p>
+              <p>Bone Shards:</p>
+              <p id="dagannothbonesResult" class="rawResults">0</p>
+            </form>
+          </div>
+        </article>
+
+        <!-- Ourg Bones -->
+        <article class="rawBones">
+          <h3>Ourg Bones</h3>
+          <div class="parent-container">
+            <div class="image-container">
+              <img
+                src="images/140px-Ourg_bones_detail.webp"
+                alt=""
+                class="boneImages"
+              />
+            </div>
+            <form
+              action=""
+              class="boneQuantityForm"
+              onsubmit="event.preventDefault()"
+            >
+              <label for="ourgbonesQuantity">Quantity:</label>
+              <input
+                type="number"
+                class="quantity-input"
+                value="0"
+                data-multiplier="112"
+                data-result-id="ourgbonesResult"
+              />
+              <p>Shards per bone: 112</p>
+              <p>Bone Shards:</p>
+              <p id="ourgbonesResult" class="rawResults">0</p>
+            </form>
+          </div>
+        </article>
+
+        <!-- Superior Dragon Bones -->
+        <article class="rawBones">
+          <h3>Superior Dragon Bones</h3>
+          <div class="parent-container">
+            <div class="image-container">
+              <img
+                src="images/140px-Superior_dragon_bones_detail.webp"
+                alt=""
+                class="boneImages"
+              />
+            </div>
+            <form
+              action=""
+              class="boneQuantityForm"
+              onsubmit="event.preventDefault()"
+            >
+              <label for="superiordragonbonesQuantity">Quantity:</label>
+              <input
+                type="number"
+                class="quantity-input"
+                value="0"
+                data-multiplier="16"
+                data-result-id="superiordragonbonesResult"
+              />
+              <p>Shards per bone: 4</p>
+              <p>Bone Shards:</p>
+              <p id="superiordragonbonesResult" class="rawResults">0</p>
+            </form>
+          </div>
+        </article>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

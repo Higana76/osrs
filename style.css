@@ -1,0 +1,128 @@
+body {
+  background-color: rgb(73, 60, 45);
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: blanchedalmond;
+  text-align: center;
+  font-size: 26px;
+}
+
+.info-box {
+  width: 325px;
+  border: solid black 1px;
+  padding: 8px;
+  margin: 2px;
+  gap: 0;
+  background-color: rgb(48, 42, 48);
+  color: bisque;
+}
+
+.reset-button {
+  width: 150px;
+  border: solid black 1px;
+  padding: 8px;
+  margin: 8px;
+  gap: 0;
+  background-color: rgb(78, 48, 48);
+  color: bisque;
+}
+
+.floating-top {
+  position: sticky;
+  top: 0px;
+  background-color: rgb(73, 60, 45);
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+}
+
+.header h1 {
+  margin: 0;
+  text-align: center;
+}
+
+.header button {
+  position: absolute;
+  right: 0;
+}
+
+@media (max-width: 700px) {
+  .header {
+    display: flex;
+    flex-direction: column; /* Stacks items vertically */
+    gap: 12px; /* Adds space between the title and button */
+    padding: 8px 0; /* Gives the header top/bottom breathing room */
+  }
+
+  .header button {
+    position: static; /* Removes absolute positioning so it doesn't overlap */
+    width: 100%; /* Optional: makes the button full-width on mobile */
+    max-width: 200px; /* Optional: limits full-width if it's too wide */
+  }
+}
+
+.rawBones {
+  background-color: rgb(58, 77, 77);
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 10px;
+  width: 400px;
+  color: rgb(204, 184, 159);
+  font-size: 18px;
+}
+
+.parent-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.evenly-spaced {
+  justify-content: space-evenly;
+}
+
+.image-container {
+  width: 150px;
+  padding: 10px;
+  display: flex;
+  justify-content: center; /* Horizontally centers */
+  align-items: center; /* Vertically centers */
+}
+
+h3 {
+  text-align: center;
+  font-size: 30px;
+  margin: 8px;
+}
+
+.rawResults {
+  font-size: 24px;
+  font-weight: 800;
+  text-align: center;
+}
+
+#calculator-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.boneImages {
+  max-height: 150px;
+  max-width: 150px;
+}
+
+.boneQuantityForm input {
+  width: 48px;
+}
