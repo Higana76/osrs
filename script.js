@@ -65,7 +65,7 @@ function updateAllTotals() {
     grandTotalDisplay.textContent = shardsGrandTotal.toLocaleString(); // Commas added here too
   }
 
-  const wines = shardsGrandTotal / 200;
+  const wines = shardsGrandTotal / 400;
   if (winesDisplay) {
     winesDisplay.textContent = wines.toLocaleString(); // Commas added here too
   }
